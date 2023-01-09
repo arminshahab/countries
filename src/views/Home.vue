@@ -38,7 +38,7 @@
         class="block rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-md md:w-1/3"
         v-model="region"
       >
-        <option value="">Choose a region</option>
+        <option value="">Filter by region</option>
         <option value="africa">Africa</option>
         <option value="america">America</option>
         <option value="asia">Asia</option>

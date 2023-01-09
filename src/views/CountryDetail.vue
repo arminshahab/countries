@@ -17,28 +17,30 @@
           <h1 class="font-bold text-2xl">{{ country.name.common }}</h1>
           <div class="flex justify-between mt-5">
             <div class="text-xs space-y-2 w-1/2">
-              <p><span class="font-bold">Native Name:</span> </p>
+              <p><span class="font-semibold">Native Name:</span></p>
               <p>
-                <span class="font-bold">Population:</span>
+                <span class="font-semibold">Population:</span>
                 {{ country.population.toLocaleString("en-US") }}
               </p>
-              <p><span class="font-bold">Region:</span> {{ country.region }}</p>
               <p>
-                <span class="font-bold">Sub Region:</span>
+                <span class="font-semibold">Region:</span> {{ country.region }}
+              </p>
+              <p>
+                <span class="font-semibold">Sub Region:</span>
                 {{ country.subregion }}
               </p>
               <p>
-                <span class="font-bold">Capital: </span>
+                <span class="font-semibold">Capital: </span>
                 {{ country.capital[0] }}
               </p>
             </div>
             <div class="text-xs space-y-2 w-1/2">
               <p>
-                <span class="font-bold">Top Level Domain:</span>
+                <span class="font-semibold">Top Level Domain:</span>
                 {{ country.tld[0] }}
               </p>
               <p>
-                <span class="font-bold">Currencies: </span>
+                <span class="font-semibold">Currencies: </span>
                 <span
                   v-for="currency in Object.values(country.currencies)"
                   :key="currency"
@@ -47,7 +49,7 @@
                 </span>
               </p>
               <p>
-                <span class="font-bold">Languages: </span>
+                <span class="font-semibold">Languages: </span>
                 <span
                   v-for="language in Object.values(country.languages)"
                   :key="language"
@@ -60,11 +62,15 @@
 
           <!-- border countries -->
           <div class="mt-10">
-            <span class="text-sm w-48">Border Countries:</span>
-            <div class="pl-4 space-x-2 inline">
-              <button class="px-3 text-xs py-0.5 border rounded">France</button>
-              <button class="px-3 text-xs py-0.5 border rounded">France</button>
-              <button class="px-3 text-xs py-0.5 border rounded">France</button>
+            <span class="text-sm w-48 font-semibold">Border Countries:</span>
+            <div
+              class="pl-4 space-x-2 inline"
+              v-for="border in country.borders"
+              :key="border"
+            >
+              <button class="px-3 text-xs py-0.5 border rounded">
+                {{ border }}
+              </button>
             </div>
           </div>
         </div>

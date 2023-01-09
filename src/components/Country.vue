@@ -5,12 +5,12 @@
     <div class="p-3 py-5 text-xs space-y-1">
       <h1 class="my-1 text-lg font-bold">{{ country.name.common }}</h1>
       <p>
-        <span class="font-bold">Population:</span>
+        <span class="font-semibold">Population:</span>
         {{ country.population.toLocaleString("en-US") }}
       </p>
-      <p><span class="font-bold">Region:</span> {{ country.region }}</p>
+      <p><span class="font-semibold">Region:</span> {{ country.region }}</p>
       <p v-if="country.capital">
-        <span class="font-bold" v-if="country.capital">Capital: </span>
+        <span class="font-semibold" v-if="country.capital">Capital: </span>
         {{ country.capital[0] }}
       </p>
     </div>
