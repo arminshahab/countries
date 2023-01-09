@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-50">
+  <div class="bg-gray-50 dark:bg-[#202C37] min-h-screen">
     <Header />
     <router-view />
   </div>

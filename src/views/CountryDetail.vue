@@ -4,7 +4,7 @@
     <div class="px-5 md:px-16">
       <div class="py-12">
         <router-link to="/">
-          <button class="px-6 py-1 border rounded shadow-md hover:bg-slate-100">
+          <button class="px-6 py-1 border rounded shadow-m dark:text-white">
             -- Back
           </button>
         </router-link>
@@ -13,7 +13,7 @@
       <!-- country -->
       <div v-if="country" class="flex">
         <img :src="country.flags.svg" class="w-1/2" />
-        <div class="py-5 px-10 w-full">
+        <div class="py-5 px-10 w-full dark:text-white">
           <h1 class="font-bold text-2xl">{{ country.name.common }}</h1>
           <div class="flex justify-between mt-5">
             <div class="text-xs space-y-2 w-1/2">

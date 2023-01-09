@@ -27,7 +27,7 @@
           <input
             v-model="search"
             type="text"
-            class="block w-full rounded-lg border border-gray-300 p-2.5 pl-10 text-sm text-gray-900 shadow-md"
+            class="block w-full rounded-lg border-gray-300 p-2.5 pl-10 text-sm text-gray-900 shadow-md dark:bg-[#2B3945] border-0 dark:text-white"
             placeholder="Search"
           />
         </div>
@@ -35,7 +35,7 @@
 
       <!-- select -->
       <select
-        class="block rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-md md:w-1/3"
+        class="block rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-md md:w-1/3 dark:bg-[#2B3945] dark:text-white border-0"
         v-model="region"
       >
         <option value="">Filter by region</option>
