@@ -11,11 +11,11 @@
       </div>
 
       <!-- country -->
-      <div v-if="country" class="flex">
-        <img :src="country.flags.svg" class="w-1/2" />
-        <div class="py-5 px-10 w-full dark:text-white">
+      <div v-if="country" class="lg:flex">
+        <img :src="country.flags.svg" class="lg:w-1/2" />
+        <div class="py-5 lg:px-10 w-full dark:text-white">
           <h1 class="font-bold text-2xl">{{ country.name.common }}</h1>
-          <div class="flex justify-between mt-5">
+          <div class="md:flex justify-between mt-5">
             <div class="text-xs space-y-2 w-1/2">
               <p><span class="font-semibold">Native Name:</span></p>
               <p>
@@ -34,7 +34,7 @@
                 {{ country.capital[0] }}
               </p>
             </div>
-            <div class="text-xs space-y-2 w-1/2">
+            <div class="text-xs space-y-2 w-1/2 mt-2 md:mt-0">
               <p>
                 <span class="font-semibold">Top Level Domain:</span>
                 {{ country.tld[0] }}
