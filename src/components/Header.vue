@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex justify-between bg-white md:px-16 px-5 py-4 shadow-md dark:bg-[#2B3945] dark:text-white">
+    <div class="flex justify-between bg-white md:px-16 px-5 py-4 shadow-md dark:bg-dark-mode-element dark:text-white">
       <h1 class="font-bold">Where in the world?</h1>
       <div
         class="flex items-center space-x-1 hover:cursor-pointer"

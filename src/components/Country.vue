@@ -1,7 +1,7 @@
 <template>
   <router-link :to="`countries/${country.name.common}`">
     <div
-      class="overflow-hidden rounded-md dark:bg-[#2B3945] shadow-xl dark:text-white border-0"
+      class="overflow-hidden rounded-md dark:bg-dark-mode-element shadow-xl dark:text-white border-0"
     >
       <img :src="country.flags.svg" class="md:h-32 h-56 w-full object-cover" />
       <div class="p-3 py-5 text-xs space-y-1">

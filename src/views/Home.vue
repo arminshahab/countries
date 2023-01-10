@@ -12,7 +12,7 @@
           >
             <svg
               aria-hidden="true"
-              class="h-5 w-5 text-gray-500 dark:text-gray-400"
+              class="h-5 dark:fill-light-mode-bg w-5 text-gray-500 dark:text-gray-400"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -26,8 +26,9 @@
           </div>
           <input
             v-model="search"
+            @input="fetchCountries()"
             type="text"
-            class="block w-full rounded-lg border-gray-300 p-2.5 pl-10 text-sm text-gray-900 shadow-md dark:bg-[#2B3945] border-0 dark:text-white"
+            class="block w-full rounded-lg border-gray-300 p-2.5 pl-10 text-sm text-gray-900 shadow-md dark:bg-dark-mode-element border-0 dark:text-white"
             placeholder="Search"
           />
         </div>
@@ -35,10 +36,12 @@
 
       <!-- select -->
       <select
-        class="block rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-md md:w-1/3 dark:bg-[#2B3945] dark:text-white border-0"
+        class="block rounded-lg border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-md md:w-1/3 dark:bg-dark-mode-element dark:text-white border-0"
         v-model="region"
+        @change="fetchCountriesWithRegion()"
       >
         <option value="">Filter by region</option>
+        <option value="all">All</option>
         <option value="africa">Africa</option>
         <option value="america">America</option>
         <option value="asia">Asia</option>
@@ -70,6 +73,7 @@ export default {
 
   methods: {
     fetchCountries() {
+      this.region = "";
       axios
         .get(
           `https://restcountries.com/v3.1/${this.search ? "name" : "all"}/${
@@ -78,35 +82,25 @@ export default {
         )
         .then((res) => {
           this.countries = res.data;
-          console.log(res.data);
         });
-
-      this.region = "";
     },
 
     fetchCountriesWithRegion() {
+      this.search = "";
+      if (this.region == "all") {
+        this.fetchCountries();
+        return;
+      }
       axios
         .get(`https://restcountries.com/v3.1/region/${this.region}`)
         .then((res) => {
           this.countries = res.data;
-          console.log(res.data);
         });
     },
   },
 
   mounted() {
     this.fetchCountries();
-    this.region = "";
-  },
-  watch: {
-    // whenever question changes, this function will run
-    search(newQuestion, oldQuestion) {
-      this.fetchCountries();
-    },
-
-    region(newQuestion, oldQuestion) {
-      this.fetchCountriesWithRegion();
-    },
   },
 };
 </script>
